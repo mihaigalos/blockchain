@@ -9,8 +9,8 @@ func TestGenesis_whenTypical(t *testing.T) {
 	entries = append(entries,
 		BlockchainEntry{
 			"0000000000000000000000000000000000000000000000000000000000000000",
-			"Genesis Block",
 			"08fda3bd700bcbdf109890811a97d4ac98d0600799bcc53e57226bfbd8c5d56e",
+			"Genesis Block",
 		})
 
 	chain := Blockchain{entries, uint64(len(entries))}
@@ -28,15 +28,15 @@ func TestTwoElements_whenTypical(t *testing.T) {
 	entries = append(entries,
 		BlockchainEntry{
 			"0000000000000000000000000000000000000000000000000000000000000000",
-			"Genesis Block",
 			"08fda3bd700bcbdf109890811a97d4ac98d0600799bcc53e57226bfbd8c5d56e",
+			"Genesis Block",
 		})
 
 	entries = append(entries,
 		BlockchainEntry{
 			"08fda3bd700bcbdf109890811a97d4ac98d0600799bcc53e57226bfbd8c5d56e",
-			"FooBarEntry",
 			"05810972d278e98049f70f1f7916c9b3c99ef1baf7afd05fa9929439257ecd51",
+			"FooBarEntry",
 		})
 
 	chain := Blockchain{entries, uint64(len(entries))}
@@ -54,22 +54,22 @@ func TestThreeElements_whenTypical(t *testing.T) {
 	entries = append(entries,
 		BlockchainEntry{
 			"0000000000000000000000000000000000000000000000000000000000000000",
+			"08fda3bd700bcbdf109890811a97d4ac98d0600799bcc53e57226bfbd8c5d56e",
 			"Genesis Block",
-			"08fda3bd700bcbdf109890811a97d4ac98d0600799bcc53e57226bfbd8c5d56e",
 		})
 
 	entries = append(entries,
 		BlockchainEntry{
 			"08fda3bd700bcbdf109890811a97d4ac98d0600799bcc53e57226bfbd8c5d56e",
-			"FooBarEntry",
 			"05810972d278e98049f70f1f7916c9b3c99ef1baf7afd05fa9929439257ecd51",
+			"FooBarEntry",
 		})
 
 	entries = append(entries,
 		BlockchainEntry{
 			"05810972d278e98049f70f1f7916c9b3c99ef1baf7afd05fa9929439257ecd51",
-			"FooBarEntry",
 			"656e445334d79b8ece05d494a884d69ec2b422b4bbc39a111b799a35e2eaf009",
+			"FooBarEntry",
 		})
 
 	chain := Blockchain{entries, uint64(len(entries))}
@@ -87,8 +87,8 @@ func TestAddThreeElements_whenTypical(t *testing.T) {
 	entries = append(entries,
 		BlockchainEntry{
 			"0000000000000000000000000000000000000000000000000000000000000000",
-			"Genesis Block",
 			"08fda3bd700bcbdf109890811a97d4ac98d0600799bcc53e57226bfbd8c5d56e",
+			"Genesis Block",
 		})
 	chain := Blockchain{entries, uint64(len(entries))}
 	chain.add("FooBarEntry")
@@ -107,8 +107,8 @@ func TestAddThreeElementsFails_whenInvalidChecksumTypical(t *testing.T) {
 	entries = append(entries,
 		BlockchainEntry{
 			"0000000000000000000000000000000000000000000000000000000000000000",
-			"Genesis Block",
 			"AAAAa3bd700bcbdf109890811a97d4ac98d0600799bcc53e57226bfbd8c5d56e",
+			"Genesis Block",
 		})
 	chain := Blockchain{entries, uint64(len(entries))}
 	chain.add("FooBarEntry")

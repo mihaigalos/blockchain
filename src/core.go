@@ -7,8 +7,8 @@ import (
 
 type BlockchainEntry struct {
 	parentHash string
-	content    string
 	hash       string
+	content    string
 }
 
 type Blockchain struct {
