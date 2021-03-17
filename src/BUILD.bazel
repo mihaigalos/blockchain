@@ -3,8 +3,8 @@ load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
 go_library(
     name = "src_lib",
     srcs = [
+        "core.go",
         "main.go",
-        "mylib.go",
     ],
     importpath = "github.com/mihaigalos/code_templates/go/src",
     visibility = ["//visibility:private"],
@@ -18,6 +18,6 @@ go_binary(
 
 go_test(
     name = "src_test",
-    srcs = ["unit_test.go"],
+    srcs = ["unit_core_test.go"],
     embed = [":src_lib"],
 )
