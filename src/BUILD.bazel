@@ -3,6 +3,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
 go_library(
     name = "src_lib",
     srcs = [
+        "consensus/proof_of_stake.go",
         "core.go",
         "main.go",
     ],
@@ -17,7 +18,13 @@ go_binary(
 )
 
 go_test(
-    name = "src_test",
+    name = "core_test",
     srcs = ["unit_core_test.go"],
+    embed = [":src_lib"],
+)
+
+go_test(
+    name = "consensus_test",
+    srcs = ["consensus/unit_consensus_test.go"],
     embed = [":src_lib"],
 )
